@@ -1,0 +1,6 @@
+/afs/andrew.cmu.edu/usr18/roysung/RealGraphics/p3late/p3-late1/src/build/application/CMakeFiles/application.dir
+/afs/andrew.cmu.edu/usr18/roysung/RealGraphics/p3late/p3-late1/src/build/glew/CMakeFiles/glew.dir
+/afs/andrew.cmu.edu/usr18/roysung/RealGraphics/p3late/p3-late1/src/build/math/CMakeFiles/math.dir
+/afs/andrew.cmu.edu/usr18/roysung/RealGraphics/p3late/p3-late1/src/build/p3/CMakeFiles/p3.dir
+/afs/andrew.cmu.edu/usr18/roysung/RealGraphics/p3late/p3-late1/src/build/scene/CMakeFiles/scene.dir
+/afs/andrew.cmu.edu/usr18/roysung/RealGraphics/p3late/p3-late1/src/build/tinyxml/CMakeFiles/tinyxml.dir

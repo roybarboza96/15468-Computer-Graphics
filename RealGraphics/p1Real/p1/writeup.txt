@@ -1,0 +1,62 @@
+I implemented all required features.
+
+
+Scene mesh data:
+
+The scene mesh data was just passed off directly to opengl for display
+lists. So all I would have to do to render the scene mesh data was call
+the function that renders the scene data. This is seen in the function
+initialize_tringle() and display_callback(). I used given scene 
+transformations to place the mesh data where it needed to be.
+
+Camera:
+The camera was set by using the given values by the passed off camera 
+variable. gluPerspective was used in the initialize function as this
+was only needed to be called once. The glutLookat function is used
+in the render function.
+
+Heightmap Mesh Data:
+The Heightmap mesh was created by first creating an array ofvertices on a 
+NUMVERTSxNUMVERTS grid. NUMVERTS is a member variables that and it is
+defined to be 64. The 64x64 grid is placed within the interval of (-1,-1)
+to (1,1). While we are creating the vertices from the two coordinates 
+represented the (x,z) coordinates thus we have to pass off these points
+to the heightmap fucntion in order to get the y-coordinate. 
+After the vertices were created, the indicies array is created.
+The indicies array is created by going across the the x position and 
+placing the index of the vertex into our array. So it would be like
+((64*x + y), (64*(x+1) + (y+1)), (64*(x+1) + y)) and also ((64*x+y),
+(64*x+(y+1)), (64*(x+1)+(+1))) . Notice that we placed the vertices in a 
+couter clockwise like fashion. We would then pass off these two arrays
+to opengl and to render them.
+
+Normals:
+The way that I calculated the normals for the mesh datas are similar. I
+just got the accumulation of all the different normals that a single
+vertex has (since each vertex can potentially be part of multiple
+triangle thus have different normals to them) and then normalized this
+value to get average normals of all the different normals that the 
+vertex is a part of.
+For the scene mesh data, I just iterated over the Triangle array,
+and for each trianngle, calculated its normal and then added it to a 
+different member array variable at the correct index. Then I just iterated
+over the this member array and normalized each value. This only needed
+to be done once thus is is done in initialize().
+For the heightmap mesh data. Since the normal for these values needed
+to be recalculated, I created a funtion called calculateNormalH().
+I just do the same thing I did for the scene mesh data. Accumulate all the
+normals in a array and then normalize the each vertex in that array.
+
+Recalculating the Heightmap mesh:
+I do the recaluation of the heighmap in updateHeightMesh(). I just
+iterate over the vertices and get the new y value.
+
+
+Lighting:
+I just implemented a single light and positioned it at (3,3,3).
+
+Materials and Colors:
+I just played around witht he colors and what not to make it look better.
+Nothing complicated.
+
+
